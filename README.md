@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farma Popular | Sua Saúde em Primeiro Lugar</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonte Inter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* ==== CSS para reduzir imagens do carrossel ==== */
+        .carousel-inner img {
+            max-height: 300px; /* Altura máxima para telas grandes */
+            object-fit: cover; /* Mantém proporção e corta excesso */
+        }
+
+        /* Ajuste para celular (largura até 768px) */
+        @media (max-width: 768px) {
+            .carousel-inner img {
+                max-height: 200px; /* Reduz ainda mais no celular */
+            }
+        }
+        
+        /* Estilo para o botão flutuante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000; /* Garante que o botão fique na frente de outros elementos */
+        }
+    </style>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- CABEÇALHO (HEADER) COM BOTÃO DE PEDIDO -->
+    <header class="bg-white shadow-md relative py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center relative">
+            <!-- Logo da Farma Popular -->
+            <a href="#">
+                <img src="https://play-lh.googleusercontent.com/AGwZt96E2A41tUYJcCBN2waem_JMjQIJCMaOBpri1n3oaJiyB13DIRLWo9nsNSnPoK4A" alt="Logo Farma Popular" class="w-24 md:w-40">
+            </a>
+
+            <!-- Botão de Pedido com Dropdown -->
+            <div class="relative inline-block text-left">
+                <button type="button" id="dropdownPedidoButton" class="inline-flex items-center bg-red-600 text-white font-bold py-2 px-4 rounded-full shadow-lg hover:bg-red-700 transition duration-300">
+                    <i class="bi bi-bicycle mr-2"></i>Fazer Pedido
+                </button>
+
+                <!-- Dropdown do Botão -->
+                <div id="dropdownPedidoMenu" class="hidden absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="dropdownPedidoButton">
+                        <a href="https://wa.me/5565992562056" target="_blank" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                            <i class="bi bi-whatsapp mr-2"></i>WhatsApp
+                        </a>
+                        <a href="tel:+556536442134" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                            <i class="bi bi-telephone-fill mr-2"></i>Ligar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Carrossel -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://i.postimg.cc/v8NRmLTZ/cuidado-e-conex-o-1.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://i.postimg.cc/ZYjSkB1J/Post-para-instagram-muitas-novidades-em-breve-neon-azul.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://i.postimg.cc/c4FvCzY8/Post-para-Instagram-Vem-Chegando-Novidade-Din-mico-Azul.png" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+    <!-- Hero -->
+    <main class="bg-white py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+                    Farma Popular: Seu medicamento entregue na sua porta.
+                </h1>
+                <p class="text-lg text-gray-600 mb-6">
+                    Peça seus medicamentos e produtos de higiene com comodidade e receba em casa com rapidez e segurança.
+                </p>
+                <a href="https://wa.me/5565992562056" target="_blank" class="bg-red-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-red-700 transition duration-300 flex items-center justify-center">
+                    <i class="bi bi-bicycle mr-2"></i>Peça já
+                </a>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://i.postimg.cc/tC02CkPy/Chat-GPT-Image-19-de-ago-de-2025-13-59-07.png" alt="Drogaria Farma Popular" class="rounded-lg shadow-xl w-full">
+            </div>
+        </div>
+    </main>
+
+    <!-- NOSSOS DESTAQUES (SECTION) MODIFICADO COM ÍCONES E CORES -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Nossos Destaques</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card de Medicamentos -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <!-- Ícone de Medicamentos -->
+                    <div class="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
+                        <i class="bi bi-capsule text-red-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-red-600">Medicamentos</h3>
+                    <p class="text-gray-600">Ampla variedade de medicamentos com os melhores preços.</p>
+                </div>
+                <!-- Card de Cosméticos e Higiene -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <!-- Ícone de Cosméticos e Higiene -->
+                    <div class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                        <i class="bi bi-plus text-blue-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-red-600">Cosméticos e Higiene</h3>
+                    <p class="text-gray-600">Produtos de beleza e higiene das melhores marcas.</p>
+                </div>
+                <!-- Card de Serviços Farmacêuticos -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <!-- Ícone de Serviços -->
+                    <div class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                        <i class="bi bi-heart-pulse text-green-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-red-600">Serviços Farmacêuticos</h3>
+                    <p class="text-gray-600">Aferição de pressão, aplicação de injetáveis e muito mais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Entre em Contato</h2>
+            <p class="text-lg text-gray-600 mb-6">Estamos prontos para te atender. Visite nossa loja ou ligue para nós!</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                
+                <!-- Botão de Telefone Fixo (Azul) -->
+                <a href="tel:+556536442134" class="bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center">
+                    <i class="bi bi-telephone-fill mr-2"></i>(65) 3644-2134
+                </a>
+                <!-- Botão de WhatsApp (Amarelo) -->
+                <a href="tel:+5565992562056" class="bg-yellow-500 text-gray-800 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-600 transition duration-300 flex items-center justify-center">
+                    <i class="bi bi-phone-fill mr-2"></i>(65) 99256-2056
+                </a>
+                <!-- Botão de WhatsApp (Verde) -->
+                <a href="https://wa.me/5565992562056" target="_blank" class="bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-700 transition duration-300 flex items-center justify-center">
+                    <i class="bi bi-whatsapp mr-2"></i>Fale Conosco no WhatsApp
+                </a>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Mapa -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Nossa Localização</h2>
+            <!-- Estrutura para o Google Maps -->
+            <div class="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.437730601444!2d-56.067577724084884!3d-15.568244417428682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x939db0fc6ea8dd7f%3A0x9439b52cca784054!2sFarma%20Popular%20Morada%20do%20Ouro!5e0!3m2!1spt-BR!2sbr!4v1755268537558!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-gray-300 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2024 Farma Popular. Todos os direitos reservados.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="hover:text-white transition duration-300">Política de Privacidade</a>
+                <a href="#" class="hover:text-white transition duration-300">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5565992562056" target="_blank" class="whatsapp-float bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition duration-300">
+        <i class="bi bi-whatsapp text-4xl"></i>
+    </a>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.getElementById('dropdownPedidoButton');
+            const menu = document.getElementById('dropdownPedidoMenu');
+
+            function toggleDropdown() {
+                const isHidden = menu.classList.contains('hidden');
+                menu.classList.toggle('hidden', !isHidden);
+            }
+
+            // Abre/fecha o dropdown ao clicar no botão
+            button.addEventListener('click', toggleDropdown);
+
+            // Fecha o dropdown ao clicar fora
+            document.addEventListener('click', (event) => {
+                if (!button.contains(event.target) && !menu.contains(event.target)) {
+                    menu.classList.add('hidden');
+                }
+            });
+
+            // Fecha o dropdown ao selecionar uma opção
+            menu.addEventListener('click', (event) => {
+                if (event.target.tagName === 'A') {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
